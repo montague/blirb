@@ -1,0 +1,7 @@
+-run the .rb file. have it say something. make the user choose
+something, then drop into the eval loop.
+-after the user chooses a task (as stipulated above), he must type code
+and then call a special function to determine whether or not he has
+completed the current task.
+-if the task is copmlte, we say woop dee fuckin doo and we drop back
+into the menu to have the guy choose another task to complete 
