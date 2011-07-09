@@ -56,16 +56,13 @@ class Task
   end
 
   def test!(b)
-    puts "calling test"
-    result = eval(test,b)
-    puts "result was: #{result}"
+    eval(@test,b)
   end
 
   def passed?
     @passed
   end
 
-  private
   def pass!
     @passed = true
   end
@@ -73,8 +70,7 @@ end
 
 if __FILE__ == $0
   t = Task.new "set a variable 'dude' with a value... any value.", %{ 
-    return true if defined? dude
-    false
+    defined?(dude) ? true : false
   }
 
   #initialize with list of tasks
