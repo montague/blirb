@@ -1,6 +1,8 @@
 module BlirbObject
   module ClassMethods
-    
+    def blirb
+      @blirb
+    end
   end
   
   module InstanceMethods
@@ -14,14 +16,15 @@ module BlirbObject
     
     def current_task_description
       Object.class_eval do
-        puts @current_task.description if @current_task
+        puts @blirb.current_task.description if @blirb.current_task
       end
     end
     
-    def current_task_test!(b)
+    def current_task_test!
+      b = context.workspace.binding
       Object.class_eval do
-        if @current_task.test!(b)
-          @current_task.pass!
+        if @blirb.current_task.test!(b)
+          @blirb.current_task.pass!
           puts "nice. that worked."
         else
           puts "oops. you fucked up. 10 push-ups and try again."

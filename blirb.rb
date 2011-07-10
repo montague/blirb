@@ -4,10 +4,16 @@ class Blirb
   class ::Object
     include BlirbObject
   end
-
-  def initialize tasks=nil
+  
+  attr_reader :current_task
+  
+  def initialize tasks
     @tasks = tasks
     @current_task = nil
+    blirb = self
+    Object.class_eval do
+      @blirb = blirb
+    end
   end
 
   def go
@@ -20,12 +26,21 @@ class Blirb
     n =~ /^\d+\Z/
   end
 
-  def current_task=(task)
-    @current_task = task
-    Object.class_eval do
-      @current_task = task
-    end
-  end
+  # def current_task=(task)
+  #   @current_task = task
+  #   Object.class_eval do
+  #     @current_task = task
+  #   end
+  # end
+  # 
+  # def current_task
+  #   @current_task
+  # end
+  # 
+  # def go_to_next_task
+  #   @current_task.pass!
+  #   menu
+  # end
 
   # does the prompt, sets the current task
   def menu
@@ -36,9 +51,11 @@ class Blirb
     while true
       print "> "
       if integer?( (selection = gets.chomp) ) && @tasks[(selection = selection.to_i)]
-        self.current_task = @tasks[selection]
+        @current_task = @tasks[selection]
         puts "cool, task #{selection}. Let's get started."
         break
+      elsif selection == 'q' || selection == 'exit' # variety is the spice of life
+        exit
       else
         puts "wtf are you trying to pull? i said make a choice, mofo!!"
       end
@@ -69,11 +86,15 @@ class Task
 end
 
 if __FILE__ == $0
-  t = Task.new "set a variable 'dude' with a value... any value.", %{ 
+  tasks = []
+  tasks << Task.new("set a variable 'dude' with a value... any value.", %{ 
     defined?(dude) ? true : false
-  }
+  })
+  tasks << Task.new("set an instance variable 'dude' with a value... any value.", %{ 
+    defined?(@dude) ? true : false
+  })
 
   #initialize with list of tasks
-  blirb = Blirb.new([t])
+  blirb = Blirb.new(tasks)
   blirb.go
 end
