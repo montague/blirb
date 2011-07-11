@@ -1,12 +1,8 @@
 module BlirbObject
   module ClassMethods
-    def blirb
-      @blirb
-    end
   end
   
-  module InstanceMethods
-    
+  module InstanceMethods    
     def blirb_methods
       puts %{
         current_task_description
@@ -31,6 +27,11 @@ module BlirbObject
         end
       end
     end
+    
+    #for finger jockeys...
+    alias :bm :blirb_methods
+    alias :ctd :current_task_description
+    alias :ctt! :current_task_test!
   end
   
   def self.included(receiver)
