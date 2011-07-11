@@ -5,3 +5,7 @@ and then call a special function to determine whether or not he has
 completed the current task.
 -if the task is copmlte, we say woop dee fuckin doo and we drop back
 into the menu to have the guy choose another task to complete 
+
+
+--irb_print_working_workspace returns the current object... can use this to 
+attach the methods i need, instead of spamming the Object class with crap.
