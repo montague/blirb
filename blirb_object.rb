@@ -23,6 +23,8 @@ module BlirbObject
         if @blirb.current_task.test!(b)
           @blirb.current_task.pass!
           puts "nice. that worked."
+          puts "========================="
+          @blirb.menu
         else
           puts "hahahaha... really? 10 push-ups and try again."
         end
@@ -32,7 +34,7 @@ module BlirbObject
     #for finger jockeys...
     alias :bm :blirb_methods
     alias :ctd :current_task_description
-    alias :ctt :current_task_test
+    alias :ctt! :current_task_test!
   end
   
   def self.included(receiver)

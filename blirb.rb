@@ -21,11 +21,6 @@ class Blirb
     IRB.start
   end
 
-  private
-  def integer? n
-    n =~ /^\d+\Z/
-  end
-
   # def current_task=(task)
   #   @current_task = task
   #   Object.class_eval do
@@ -44,6 +39,10 @@ class Blirb
 
   # does the prompt, sets the current task
   def menu
+    if !@tasks.any? { |task| !task.passed? }
+      puts "thanks for completing the tutorial. come again soon. buh-bye now."
+      exit
+    end
     puts "please choose a task by entering task number:\n"
     @tasks.each_with_index do |task, index|
       puts "#{index} - #{task.description}" unless task.passed?
@@ -60,6 +59,11 @@ class Blirb
         puts "sorry, i'm not sure what you're trying to do. please do something different."
       end
     end
+  end
+  
+  private
+  def integer? n
+    n =~ /^\d+\Z/
   end
 end
 
