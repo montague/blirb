@@ -57,7 +57,7 @@ class Blirb
       elsif selection == 'q' || selection == 'exit' # variety is the spice of life
         exit
       else
-        puts "wtf are you trying to pull? i said make a choice, mofo!!"
+        puts "sorry, i'm not sure what you're trying to do. please do something different."
       end
     end
   end

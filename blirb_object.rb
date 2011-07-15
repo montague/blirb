@@ -2,7 +2,8 @@ module BlirbObject
   module ClassMethods
   end
   
-  module InstanceMethods    
+  module InstanceMethods
+
     def blirb_methods
       puts %{
         current_task_description
@@ -23,7 +24,7 @@ module BlirbObject
           @blirb.current_task.pass!
           puts "nice. that worked."
         else
-          puts "oops. you fucked up. 10 push-ups and try again."
+          puts "hahahaha... really? 10 push-ups and try again."
         end
       end
     end
@@ -31,7 +32,7 @@ module BlirbObject
     #for finger jockeys...
     alias :bm :blirb_methods
     alias :ctd :current_task_description
-    alias :ctt! :current_task_test!
+    alias :ctt :current_task_test
   end
   
   def self.included(receiver)
