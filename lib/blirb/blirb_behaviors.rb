@@ -23,7 +23,6 @@ module BlirbBehaviors
       b = context.workspace.binding
       Object.class_eval do
         if @blirb.current_task.test!(b)
-          # @blirb.current_task.pass!
           puts "nice. that worked."
           puts "========================="
           @blirb.menu
@@ -35,6 +34,7 @@ module BlirbBehaviors
     
     #for finger jockeys...
     alias :bm :blirb_methods
+    alias :derp :blirb_methods
     alias :ctd :current_task_description
     alias :ctt! :current_task_test!
   end

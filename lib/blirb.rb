@@ -1,4 +1,5 @@
 require 'irb'
+require 'yaml'
 require_relative 'blirb/task'
 require_relative 'blirb/blirb_behaviors'
 require_relative 'blirb/core_extensions'

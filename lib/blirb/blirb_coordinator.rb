@@ -1,9 +1,11 @@
 
 class BlirbCoordinator  
   attr_reader :current_task, :tasks
+  DEFAULT_TASKS = 'blirb_tasks/tasks.yml'
   
-  def initialize tasks
-    @tasks = tasks
+  def initialize file_path = nil
+    load_tasks_from file_path
+    # @tasks = tasks
     @current_task = nil
     blirb = self
     Object.class_eval do
@@ -41,6 +43,14 @@ class BlirbCoordinator
   end
   
   private
+  def load_tasks_from file_path
+    @tasks = []
+    puts Dir.pwd
+    YAML.load_file(file_path || DEFAULT_TASKS)['tasks'].each do |raw_task|
+      @tasks << Task.new(raw_task['description'],raw_task['test'])
+    end
+  end
+  
   def remaining_tasks
     @tasks.select {|task| !task.passed?}
   end
