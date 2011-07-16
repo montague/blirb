@@ -9,14 +9,11 @@ class Task
   end
 
   def test!(b)
-    eval(@test,b)
+    @passed = !!eval(@test,b)
   end
 
   def passed?
     @passed
   end
 
-  def pass!
-    @passed = true
-  end
 end

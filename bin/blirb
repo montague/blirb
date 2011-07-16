@@ -11,9 +11,8 @@ tasks << Task.new("set an instance variable 'dude' with a value... any value.", 
 })
 
 # # if a tasks file is passed in, parse the yml-based tasks and feed them to blirb
-# 
 # if ARGV[0]
-#   puts ARGV[0]
+#   tasks = ARGV.shift
 # end
 
 #initialize with list of tasks
