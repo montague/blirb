@@ -1,0 +1,5 @@
+require 'irb'
+require_relative 'blirb/task'
+require_relative 'blirb/blirb_object'
+require_relative 'blirb/core_extensions'
+require_relative 'blirb/blirb'

@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/blirb'
+
+tasks = []
+tasks << Task.new("set a variable 'dude' with a value... any value.", %{ 
+defined?(dude) ? true : false
+})
+tasks << Task.new("set an instance variable 'dude' with a value... any value.", %{ 
+defined?(@dude) ? true : false
+})
+
+#initialize with list of tasks
+blirb = Blirb.new(tasks)
+blirb.go
