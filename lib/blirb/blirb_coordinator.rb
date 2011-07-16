@@ -1,6 +1,6 @@
 
 class BlirbCoordinator  
-  attr_reader :current_task
+  attr_reader :current_task, :tasks
   
   def initialize tasks
     @tasks = tasks
