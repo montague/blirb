@@ -1,3 +1,3 @@
 class Object
-  include BlirbObject
+  include BlirbBehaviors
 end

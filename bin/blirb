@@ -4,12 +4,18 @@ require_relative '../lib/blirb'
 
 tasks = []
 tasks << Task.new("set a variable 'dude' with a value... any value.", %{ 
-defined?(dude) ? true : false
+  defined?(dude) ? true : false
 })
 tasks << Task.new("set an instance variable 'dude' with a value... any value.", %{ 
-defined?(@dude) ? true : false
+  defined?(@dude) ? true : false
 })
 
+# if a tasks file is passed in, parse the yml-based tasks and feed them to blirb
+
+if ARGV[0]
+  puts ARGV[0]
+end
+
 #initialize with list of tasks
-blirb = Blirb.new(tasks)
+blirb = BlirbCoordinator.new(tasks)
 blirb.go

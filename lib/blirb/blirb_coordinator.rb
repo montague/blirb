@@ -1,5 +1,5 @@
 
-class Blirb  
+class BlirbCoordinator  
   attr_reader :current_task
   
   def initialize tasks

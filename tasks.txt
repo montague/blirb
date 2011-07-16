@@ -1,21 +1,7 @@
--run the .rb file. have it say something. make the user choose
-something, then drop into the eval loop.
--after the user chooses a task (as stipulated above), he must type code
-and then call a special function to determine whether or not he has
-completed the current task.
--if the task is complete, we say woop dee doo and we drop back
-into the menu to have the guy choose another task to complete 
-
-TODO
---restructure this so it doesn't look like blown chunks
---TESTS
-
-
-NOTES (and maybe a haiku here and there)
---irb_print_working_workspace returns the current object... can use this to 
-attach the methods i need, instead of spamming the Object class with crap.
---use dynamic dispatch to define the methods only on the main object.
-
---computer is bad
---listen, laptop: Y U MEAN?
---i am disappoint.
+-Modularization
+  -interface for a user to write his own tasks. how does it work?
+    -initial idea
+      -on the command line, user passes a file that contains a
+      list of tasks (yml?) 
+      -blirb parses them and drops them into the app logic?
+    
