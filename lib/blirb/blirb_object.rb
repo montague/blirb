@@ -1,3 +1,5 @@
+# adds blirb functionality
+
 module BlirbObject
   module ClassMethods
   end
