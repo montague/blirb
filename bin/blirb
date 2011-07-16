@@ -3,10 +3,11 @@
 require_relative '../lib/blirb'
 
 # # if a tasks file is passed in, parse the yml-based tasks and feed them to blirb
-# if ARGV[0]
-#   tasks = ARGV.shift
-# end
 
-#initialize with list of tasks
-blirb = BlirbCoordinator.new
+if ARGV[0]
+  blirb = BlirbCoordinator.new ARGV.shift
+else
+  blirb = BlirbCoordinator.new ARGV.shift
+end
+
 blirb.go
