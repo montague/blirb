@@ -6,7 +6,16 @@ completed the current task.
 -if the task is complete, we say woop dee doo and we drop back
 into the menu to have the guy choose another task to complete 
 
+TODO
+--restructure this so it doesn't look like blown chunks
+--TESTS
 
+
+NOTES (and maybe a haiku here and there)
 --irb_print_working_workspace returns the current object... can use this to 
 attach the methods i need, instead of spamming the Object class with crap.
 --use dynamic dispatch to define the methods only on the main object.
+
+--computer is bad
+--listen, laptop: Y U MEAN?
+--i am disappoint.
