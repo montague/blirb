@@ -7,7 +7,7 @@ require_relative '../lib/blirb'
 if ARGV[0]
   blirb = BlirbCoordinator.new ARGV.shift
 else
-  blirb = BlirbCoordinator.new ARGV.shift
+  blirb = BlirbCoordinator.new
 end
 
 blirb.go
