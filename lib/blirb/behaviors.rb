@@ -1,6 +1,6 @@
 # adds blirb functionality
 
-module BlirbBehaviors
+module Behaviors
   module ClassMethods
   end
   

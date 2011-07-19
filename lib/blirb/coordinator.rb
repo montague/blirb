@@ -1,5 +1,5 @@
 
-class BlirbCoordinator  
+class Coordinator  
   attr_reader :current_task, :tasks
   DEFAULT_TASKS = 'blirb_tasks/tasks.yml'
   
