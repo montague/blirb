@@ -1,5 +1,3 @@
-module Blirb
-  class Object
-    include Behaviors
-  end
+class Object
+  include Blirb::Behaviors
 end
