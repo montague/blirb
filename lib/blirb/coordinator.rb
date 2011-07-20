@@ -32,7 +32,7 @@ module Blirb
         print "> "
         if integer?( (selection = gets.chomp) ) && @tasks[(selection = selection.to_i)]
           @current_task = @tasks[selection]
-          puts "cool, task #{selection}. Let's get started."
+          puts "ok. #{@current_task.description}. Let's get started."
           break
         elsif selection == 'q' || selection == 'exit' # variety is the spice of life
           exit
