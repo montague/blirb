@@ -24,12 +24,12 @@ module Blirb
         puts "thanks for completing the tutorial. come again soon. buh-bye now."
         exit
       end
-      puts "please choose a task by entering task number:\n"
+      puts "\nplease choose a task by entering task number:\n\n"
       @tasks.each_with_index do |task, index|
         puts "#{index} - #{task.description}" unless task.passed?
       end
       while true
-        print "> "
+        print "\n> "
         if integer?( (selection = gets.chomp) ) && @tasks[(selection = selection.to_i)]
           @current_task = @tasks[selection]
           puts "ok. #{@current_task.description}. Let's get started."

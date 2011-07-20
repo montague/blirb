@@ -6,20 +6,21 @@ module Blirb
 
     module InstanceMethods
 
-      def blirb_methods
+      def help!
         puts %{
-          current_task_description
-          current_task_test!
+          task - print the current task's description
+          done - test to see if you've completed the current task
+          help! - view this menu (you just typed this..)
         }
       end
 
-      def current_task_description
+      def task
         Object.class_eval do
           puts @blirb.current_task.description if @blirb.current_task
         end
       end
 
-      def current_task_test!
+      def done
         b = context.workspace.binding
         Object.class_eval do
           if @blirb.current_task.test!(b)
@@ -27,16 +28,10 @@ module Blirb
             puts "========================="
             @blirb.menu
           else
-            puts "hahahaha... really? 10 push-ups and try again."
+            puts "test failed. try again."
           end
         end
       end
-
-      #for finger jockeys...
-      alias :bm :blirb_methods
-      alias :derp :blirb_methods
-      alias :ctd :current_task_description
-      alias :ctt! :current_task_test!
     end
 
     def self.included(receiver)
