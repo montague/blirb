@@ -5,7 +5,7 @@ module Blirb
     
     def initialize file_path = nil
       @tasks = []
-      load_tasks file_path
+      load_tasks file_path  || DEFAULT_TASKS
       @current_task = nil
       blirb = self
       Object.class_eval do
@@ -63,9 +63,10 @@ module Blirb
     end
 
     def load_tasks file_path
-      eval File.read(file_path || DEFAULT_TASKS)
+      eval File.read(file_path)
     end
 
+    # used for task definistions in blirb_tasks/tasks.rb
     def task description, test_code
       @tasks << Task.new(description, test_code)
     end
