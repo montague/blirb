@@ -7,11 +7,11 @@ module Blirb
     module InstanceMethods
 
       def help!
-        puts %{
-          task - print the current task's description
-          done - test to see if you've completed the current task
-          help! - view this menu (you just typed this..)
-        }
+        puts 
+        Blirb::COMMANDS.each do |command|
+          puts %{\t\t#{command}}
+        end
+        puts 
       end
 
       def task
