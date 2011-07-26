@@ -6,7 +6,7 @@ class CoordinatorTest < Test::Unit::TestCase
   assert_equal 2, bc.tasks.length, "bc should have tasks"
   assert Object.class_eval { @blirb }, "bc should set Object class variable"
   
-  bc = Coordinator.new 'test/fixtures/tasks.yml'
+  bc = Coordinator.new 'test/fixtures/tasks.rb'
   assert_equal 1, bc.tasks.length
  end
   

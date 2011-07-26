@@ -1,11 +1,11 @@
 module Blirb
   class Coordinator  
     attr_reader :current_task, :tasks
-    DEFAULT_TASKS = 'blirb_tasks/tasks.yml'
+    DEFAULT_TASKS = 'blirb_tasks/tasks.rb'
 
     def initialize file_path = nil
-      load_tasks_from file_path
-      # @tasks = tasks
+      @tasks = []
+      load_tasks file_path
       @current_task = nil
       blirb = self
       Object.class_eval do
@@ -20,35 +20,46 @@ module Blirb
 
     # displays menu, sets the current task
     def menu
-      if remaining_tasks.empty?
-        puts "thanks for completing the tutorial. come again soon. buh-bye now."
-        exit
-      end
+      end_tutorial if remaining_tasks.empty?
+      
       puts "\nplease choose a task by entering task number:\n\n"
-      @tasks.each_with_index do |task, index|
-        puts "#{index} - #{task.description}" unless task.passed?
-      end
+      list_tasks
+      
       while true
         print "\n> "
         if integer?( (selection = gets.chomp) ) && @tasks[(selection = selection.to_i)]
-          @current_task = @tasks[selection]
-          puts "ok. #{@current_task.description}. Let's get started."
+          select_task selection
           break
         elsif selection == 'q' || selection == 'exit' # variety is the spice of life
           exit
-        else
-          puts "sorry, i'm not sure what you're trying to do. please do something different."
         end
+        puts "sorry, i'm not sure what you're trying to do. please do something different."
       end
     end
 
     private
-    def load_tasks_from file_path
-      @tasks = []
-      puts Dir.pwd
-      YAML.load_file(file_path || DEFAULT_TASKS)['tasks'].each do |raw_task|
-        @tasks << Task.new(raw_task['description'],raw_task['test'])
+    def select_task selection
+      @current_task = @tasks[selection]
+      puts "ok. #{@current_task.description}. Let's get started."
+    end
+    
+    def list_tasks
+      @tasks.each_with_index do |task, index|
+        puts "#{index} - #{task.description}" unless task.passed?
       end
+    end
+    
+    def end_tutorial
+      puts "thanks for completing the tutorial. come again soon. buh-bye now."
+      exit
+    end
+    
+    def load_tasks file_path
+      eval File.read(file_path || DEFAULT_TASKS)
+    end
+
+    def task description, test_code
+      @tasks << Task.new(description, test_code)
     end
 
     def remaining_tasks

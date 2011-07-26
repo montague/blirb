@@ -1,4 +1,0 @@
-tasks:
-  -
-      description: define a method 'herp_derp' that returns 'sup foo'.
-      test: "begin herp_derp == 'sup foo' rescue false end"

@@ -1,7 +1,0 @@
-tasks:
-  -
-      description: set a variable 'dude' with a value... any value.
-      test: "defined?(dude) ? true : false"
-  - 
-      description: set an instance variable 'dude' with a value... any value.
-      test: "defined?(@dude) ? true : false"
