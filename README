@@ -18,10 +18,12 @@ commands have been added.
     	help! - view this menu
     
     To exit from the tutorial menu, type 'q' or 'exit'.
-    ```
     
-    Below the command list appears a list of selectable tasks:
-    ```
+    
+Below the command list appears a list of selectable tasks:
+    
+    Please choose a task by entering a task number:
+
     0 - set a variable 'dude' with a value, any value
     1 - set an instance variable 'dude' with a value... any value
     
