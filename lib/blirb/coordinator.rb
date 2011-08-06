@@ -22,7 +22,7 @@ module Blirb
     def menu
       end_tutorial if remaining_tasks.empty?
       list_commands
-      puts "\nPlease choose a task by entering task number:\n\n"
+      puts "\nPlease choose a task by entering task number (completed tasks will not appear):\n\n"
       list_tasks
 
       while true
