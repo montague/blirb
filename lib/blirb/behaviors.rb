@@ -24,11 +24,11 @@ module Blirb
         b = context.workspace.binding
         Object.class_eval do
           if @blirb.current_task.test!(b)
-            puts "nice. that worked."
+            puts "Nice. That worked."
             puts "========================="
             @blirb.menu
           else
-            puts "test failed. try again."
+            puts "Test failed. Try again."
           end
         end
       end

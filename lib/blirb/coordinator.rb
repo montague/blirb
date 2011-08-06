@@ -67,8 +67,8 @@ module Blirb
     end
 
     # used for task definistions in blirb_tasks/tasks.rb
-    def task description, test_code
-      @tasks << Task.new(description, test_code)
+    def task description, test_code, validation_code
+      @tasks << Task.new(description, test_code, validation_code)
     end
 
     def remaining_tasks
