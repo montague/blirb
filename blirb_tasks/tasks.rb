@@ -30,7 +30,17 @@ task "Create a class 'Bro' that has an instance method 'fist_bump'. The method s
   end
 }
 
-task "Define 'Bro' so that he has a private method 'drink_natty_ice'. The method should return :yah_dude (the boolean)", %{
+task "Give 'Bro' a class method called 'protein_shake' that returns the string 'getting hyooge!'", %{
+  Bro.protein_shake == 'getting hyooge'
+}, %{
+  class Bro
+    def self.protein_shake
+      "getting hyooge"
+    end
+  end
+}
+
+task "Define 'Bro' so that he has a private method 'drink_natty_ice'. The method should return :yah_dude", %{
   bro = Bro.new
   bro.private_methods.include?(:drink_natty_ice) && bro.send(:drink_natty_ice) == :yah_dude
 }, %{
@@ -51,3 +61,11 @@ task "Create a 'Bro' object in the variable 'brah'. Give brah (and only brah) th
     :full
   end
 }
+
+task "Create a new 'LittleBro' object that inherits from 'Bro'", %{
+  LittleBro.ancestors[1] == Bro
+}, %{
+  class Bro; end
+  class LittleBro < Bro; end
+}
+
