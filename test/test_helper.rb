@@ -15,7 +15,7 @@ class TaskTester
     eval File.read(file_path)
   end
   
-  # used for task definistions in blirb_tasks/tasks.rb
+  # used for task definitions in blirb_tasks/tasks.rb
   def task description, test_code, validation_code
     @tasks << ::Blirb::Task.new(description, test_code, validation_code)
   end
