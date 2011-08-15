@@ -31,11 +31,11 @@ task "Create a class 'Bro' that has an instance method 'fist_bump'. The method s
 }
 
 task "Give 'Bro' a class method called 'protein_shake' that returns the string 'getting hyooge!'", %{
-  Bro.protein_shake == 'getting hyooge'
+  Bro.protein_shake == 'getting hyooge!'
 }, %{
   class Bro
     def self.protein_shake
-      "getting hyooge"
+      "getting hyooge!"
     end
   end
 }

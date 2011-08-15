@@ -1,8 +1,14 @@
-Dir.chdir File.expand_path('../..', __FILE__) #for textmate's cmd+R
-require_relative '../lib/blirb'
-require 'test/unit'
-class Test::Unit::TestCase
-  include Blirb
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'rspec'
+require 'blirb'
+
+# Requires supporting files with custom matchers and macros, etc,
+# in ./support/ and its subdirectories.
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+
+RSpec.configure do |config|
+  
 end
 
 class TaskTester

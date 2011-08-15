@@ -1,7 +1,0 @@
--Modularization
-  -interface for a user to write his own tasks. how does it work?
-    -initial idea
-      -on the command line, user passes a file that contains a
-      list of tasks (yml?) 
-      -blirb parses them and drops them into the app logic?
-    
