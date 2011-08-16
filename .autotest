@@ -1,0 +1,13 @@
+require 'autotest/growl'
+require 'autotest/fsevent'
+
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .DS_Store vendor}.each do |exception|
+    autotest.add_exception(exception)
+  end
+  false
+end
+
+Autotest.add_hook :green do
+  Kernel.system('find . -name "*.rb" | xargs grep -n "# DEBT"')
+end
