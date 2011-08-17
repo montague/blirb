@@ -75,6 +75,8 @@ follows:
 
     task "description of task (this is what the student reads)", %{
       code that will be eval'd to test if the task has been passed
+    }, %{
+      code that, when eval'd, will cause the above test code to pass
     }
 
 
