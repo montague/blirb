@@ -39,7 +39,7 @@ module Blirb
 
     private
     def list_commands
-      puts "\nWelcome to Blirb v #{Blirb::VERSION}\n\n"
+      puts "\nWelcome to Blirb v#{Blirb::VERSION}\n\n"
       puts "\nThe following commands are available during the tutorial (irb) session:\n\n"
       Blirb::COMMANDS.each do |command|
         puts "\t#{command}\n"
