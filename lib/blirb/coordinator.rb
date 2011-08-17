@@ -58,7 +58,7 @@ module Blirb
     end
 
     def end_tutorial
-      puts "Thanks for completing the tutorial. FORK ME ON GITHUB!"
+      puts "Thanks for completing the tutorial. FORK ME ON GITHUB! (https://github.com/montague/blirb)"
       exit
     end
 
