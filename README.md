@@ -5,7 +5,9 @@ as the "Interactive Ruby Shell". It can be used in two different ways:
 
 ## Using Blirb to learn
 
-As a student, Blirb can be used in tutorial mode by running `./bin/blirb`. 
+As a student, Blirb can be used in tutorial mode by installing (`gem install blirb`) 
+and then simply running `blirb`. Custom task files (as described below) can be passed as a 
+single command line argument: `blirb custom_task_file.rb`.
 The student selects a task to complete that involves various ruby concepts. 
 He is then dropped into a special IRB session where several additional global 
 commands have been added.
