@@ -1,7 +1,7 @@
 module Blirb
   class Coordinator  
     attr_reader :current_task, :tasks
-    DEFAULT_TASKS = 'blirb_tasks/tasks.rb'
+    DEFAULT_TASKS = File.expand_path('blirb_tasks/tasks.rb')
     
     def initialize file_path = nil
       @tasks = []
