@@ -1,6 +1,6 @@
 require 'irb'
-require_relative 'blirb/commands'
-require_relative 'blirb/task'
-require_relative 'blirb/behaviors'
-require_relative 'blirb/core_extensions'
-require_relative 'blirb/coordinator'
+require File.expand_path('../blirb/commands', __FILE__)
+require File.expand_path('../blirb/task', __FILE__)
+require File.expand_path('../blirb/behaviors', __FILE__)
+require File.expand_path('../blirb/core_extensions', __FILE__)
+require File.expand_path('../blirb/coordinator', __FILE__)

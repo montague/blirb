@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/blirb'
+require File.expand_path('../../lib/blirb', __FILE__)
 
 # # if a tasks file is passed in, parse the yml-based tasks and feed them to blirb
 
