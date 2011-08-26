@@ -1,6 +1,6 @@
 # Blirb
 
-### Currently only compatible with Ruby ~> 1.9.2
+### Currently only tested with Ruby ~> 1.9.2
 
 Blirb is a ruby teaching and practice tool that sits on top of IRB, also known 
 as the "Interactive Ruby Shell". It can be used in two different ways:
